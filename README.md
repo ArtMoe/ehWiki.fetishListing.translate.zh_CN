@@ -25,8 +25,8 @@
 
 # 调用
 
-- 获取版本号：https://api.github.com/repos/SunBrook/ehWiki.fetishListing.translate.zh_CN
-- 获取json数据：https://cdn.jsdelivr.net/gh/SunBrook/ehWiki.fetishListing.translate.zh_CN@版本号/文件
+- 获取版本号：https://api.github.com/repos/SunBrook/ehWiki.fetishListing.translate.zh_CN/branches/master
+- 根据版本号 `sha` 获取json数据：https://cdn.jsdelivr.net/gh/SunBrook/ehWiki.fetishListing.translate.zh_CN@版本号/文件
 
 
 

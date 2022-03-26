@@ -34,5 +34,5 @@
 
 # 致谢
 
-- Excel2Object https://github.com/chsword/Excel2Object/
-- EhTagTranslation/Database https://github.com/EhTagTranslation/Database
+- [Excel2Object](https://github.com/chsword/Excel2Object/)
+- [EhTagTranslation/Database](https://github.com/EhTagTranslation/Database)

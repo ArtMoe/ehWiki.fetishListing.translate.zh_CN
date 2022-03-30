@@ -11,13 +11,15 @@
 - 跟随 ehWiki 网站更新频率，每月15号更新一次
 - 分级只有父子两级，没有多级分类
 
-| 文件                             | 说明                                       |
-| -------------------------------- | ------------------------------------------ |
-| fetish.json                      | 完整版本，父子分级                         |
-| fetish.oneLevel.json             | 完整版本，父子同一级                       |
-| fetish.oneLevel.xlsx             | 完整版本，数据采用 Data 部分               |
-| fetish.oneLevel.withoutLang.json | 没有 Language 模块标签，父子同级           |
-| fetish.oneLevel.withoutLang.xlsx | 没有 Language 模块标签，数据采用 Data 部分 |
+| 文件                                       | 说明                                                       |
+| ------------------------------------------ | ---------------------------------------------------------- |
+| fetish.json                                | 完整版本，父子分级                                         |
+| fetish.oneLevel.json                       | 完整版本，父子同一级                                       |
+| fetish.oneLevel.xlsx                       | 完整版本，数据采用 Data 部分                               |
+| fetish.oneLevel.withoutLang.json           | 没有 Language 模块标签，父子同级                           |
+| fetish.oneLevel.withoutLang.xlsx           | 没有 Language 模块标签，数据采用 Data 部分                 |
+| fetish.oneLevel.withoutLang.searchKey.json | 没有 Language 模块标签，包含搜索关键字，父子同级           |
+| fetish.oneLevel.withoutLang.searchKey.xlsx | 没有 Language 模块标签，包含搜索关键字，数据采用 Data 部分 |
 
 
 

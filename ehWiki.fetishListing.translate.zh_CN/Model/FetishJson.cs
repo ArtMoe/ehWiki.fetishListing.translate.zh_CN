@@ -35,4 +35,10 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
         [ExcelTitle("子级描述")]
         public string sub_desc { get; set; }
     }
+
+    public class FetishSearchKeyJson: FetishJson
+    {
+        [ExcelTitle("搜索关键字")]
+        public string search_key { get; set; }
+    }
 }

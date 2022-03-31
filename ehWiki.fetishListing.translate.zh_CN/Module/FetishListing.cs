@@ -83,6 +83,7 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
             {
                 version = VERSION,
                 parent_en_array = originParentDict.Select(c => c.Key).ToArray(),
+                count = fetishList.Count,
                 data = fetishList.ToDictionary(
                     k => k.ps_en,
                     v => new
@@ -103,11 +104,13 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
             ReleaseExcel("fetish.oneLevel.xlsx", fetishList);
 
             const string LANG = "Language";
+            var fetishWithoutLangList = fetishList.Where(c => c.parent_en != LANG).ToList();
             var releaseWithoutLanguageModel = new
             {
                 version = VERSION,
                 parent_en_array = originParentDict.Where(c => c.Key != LANG).Select(c => c.Key).ToArray(),
-                data = fetishList.Where(c => c.parent_en != LANG).ToDictionary(
+                count = fetishWithoutLangList.Count,
+                data = fetishWithoutLangList.ToDictionary(
                     k => k.ps_en,
                     v => new
                     {
@@ -124,18 +127,29 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
             ReleaseJson("fetish.oneLevel.withoutLang.json", releaseWithOutLangJson);
 
             // 导出 Excel 方便检查 [父子同级版本 - 没有 Language 模块]
-            var fetishWithoutLangList = fetishList.Where(c => c.parent_en != LANG).ToList();
             ReleaseExcel("fetish.oneLevel.withoutLang.xlsx", fetishWithoutLangList);
 
+            var fetishWithoutLangSearchKeyList = fetishList.Where(c => c.parent_en != LANG)
+                .Select(c => new FetishSearchKeyJson
+                {
+                    search_key = $"{c.parent_en},{c.parent_zh},{c.sub_en},{c.sub_zh}",
+                    parent_en = c.parent_en,
+                    parent_zh = c.parent_zh,
+                    ps_en = c.ps_en,
+                    sub_en = c.sub_en,
+                    sub_zh = c.sub_zh,
+                    sub_desc = c.sub_desc
+                }).ToList();
             var releaseWithoutLanguageSearchKeyModel = new
             {
                 version = VERSION,
                 parent_en_array = originParentDict.Where(c => c.Key != LANG).Select(c => c.Key).ToArray(),
-                data = fetishList.Where(c => c.parent_en != LANG).ToDictionary(
+                count = fetishWithoutLangSearchKeyList.Count,
+                data = fetishWithoutLangSearchKeyList.ToDictionary(
                     k => k.ps_en,
                     v => new
                     {
-                        search_key = $"{v.parent_en},{v.parent_zh},{v.sub_en},{v.sub_zh}",
+                        v.search_key,
                         v.parent_en,
                         v.parent_zh,
                         v.sub_en,
@@ -148,17 +162,6 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
             ReleaseJson("fetish.oneLevel.withoutLang.searchKey.json", releaseWithOutLangSearchKeyJson);
 
             // 导出 Excel 方便检查 [父子同级版本 - 没有 Language 模块]
-            var fetishWithoutLangSearchKeyList = fetishList.Where(c => c.parent_en != LANG)
-                .Select(c => new FetishSearchKeyJson
-                {
-                    search_key = $"{c.parent_en},{c.parent_zh},{c.sub_en},{c.sub_zh}",
-                    parent_en = c.parent_en,
-                    parent_zh = c.parent_zh,
-                    ps_en = c.ps_en,
-                    sub_en = c.sub_en,
-                    sub_zh = c.sub_zh,
-                    sub_desc = c.sub_desc
-                }).ToList();
             ReleaseExcel("fetish.oneLevel.withoutLang.searchKey.xlsx", fetishWithoutLangSearchKeyList);
 
             var releaseNormalModel = new

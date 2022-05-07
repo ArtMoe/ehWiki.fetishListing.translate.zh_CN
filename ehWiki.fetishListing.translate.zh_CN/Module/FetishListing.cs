@@ -76,7 +76,7 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
             var fetishListJson2 = JsonConvert.SerializeObject(fetishList);
             Output("恋物过滤2数据列表", "txt", fetishListJson2);
 
-            const string VERSION = "20220423.1309"; // 恋物网页更新日期
+            const string VERSION = "20220505.1108"; // 恋物网页更新日期
 
             // 生成符合的新版 父子标签json
             var releaseModel = new

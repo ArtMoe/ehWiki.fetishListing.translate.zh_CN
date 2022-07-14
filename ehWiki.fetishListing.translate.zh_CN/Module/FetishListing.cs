@@ -71,7 +71,7 @@ namespace ehWiki.fetishListing.translate.zh_CN.Model
                     item.sub_desc = ehTag[1];
                 }
             }
-
+             
             // 导出查看效果
             var fetishListJson2 = JsonConvert.SerializeObject(fetishList);
             Output("恋物过滤2数据列表", "txt", fetishListJson2);
